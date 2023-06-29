@@ -12,19 +12,21 @@ namespace CollectionsMasterConsoleUI
             //Utlilize the method stubs at the bottom for the methods you must create ⬇⬇⬇
 
             #region Arrays
-            //TODO: Create an integer Array of size 50
-            
+            //TODO: Create an integer Array of size 50 - DONE
+            int[] fiftyNumbers = new int[50];
 
             //TODO: Create a method to populate the number array with 50 random numbers that are between 0 and 50
-            
+            Populater(fiftyNumbers);
 
-            //TODO: Print the first number of the array
+            //TODO: Print the first number of the array - DONE
+            Console.WriteLine($"First Number: {fiftyNumbers[0]}");
 
-            //TODO: Print the last number of the array            
+            //TODO: Print the last number of the array - DONE            
+            Console.WriteLine($"Last Number: {fiftyNumbers[49]}");
 
             Console.WriteLine("All Numbers Original");
-            //UNCOMMENT this method to print out your numbers from arrays or lists
-            //NumberPrinter();
+            //UNCOMMENT this method to print out your numbers from arrays or lists - DONE
+            NumberPrinter(fiftyNumbers);
             Console.WriteLine("-------------------");
 
             //TODO: Reverse the contents of the array and then print the array out to the console.
@@ -35,7 +37,9 @@ namespace CollectionsMasterConsoleUI
 
             Console.WriteLine("All Numbers Reversed:");
 
-            Console.WriteLine("---------REVERSE CUSTOM------------");
+            //custom method #1
+            Array.Reverse(fiftyNumbers);
+            NumberPrinter(fiftyNumbers);
 
             Console.WriteLine("-------------------");
 
@@ -117,15 +121,15 @@ namespace CollectionsMasterConsoleUI
             
         }
 
-        private static void Populater(List<int> numberList)
-        {
-            Random rng = new Random();
-
-        }
+        
 
         private static void Populater(int[] numbers)
         {
             Random rng = new Random();
+            for (int i = 0; i < numbers.Length; i++) 
+            {
+                numbers[i] = rng.Next(0, 51);
+            }
 
         }        
 
